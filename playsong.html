@@ -1,0 +1,153 @@
+
+  <style type="text/css">
+#playList{
+/*display: flex;
+justify-content:center;
+align-item:center;*/
+
+}
+section{
+display: flex;
+align-items: center;
+flex-direction:row;
+justify-content: space-around;  
+margin: 2.5rem;
+
+}
+
+.playItemC{
+border-radius: 50%;
+width: 250px;
+height: 250px; 
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+animation-name: spin;
+animation-duration: 4000ms;
+animation-iteration-count: infinite;
+animation-timing-function: linear;
+
+}
+span.playItemSmallC{
+border-radius: 50%;
+width: 60px;
+height: 60px; 
+background-color:#fff;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.playIconC{
+border-top: 10px solid white;
+border-bottom: 10px solid white;
+border-left: 20px solid black;
+
+}
+#play{
+display: flex;
+justify-content: flex-start;
+align-items: center;	
+border-radius: 150px 150px 150px 150px;	
+width:48%;
+height: 300px; 
+background-color: #FF4E18
+}
+@keyframes spin {
+   from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+#container{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: center;
+    width:100%;
+}
+#buttonsContainer{
+      display: flex;
+      flex-flow:column;
+      justify-content: center;
+       /*justify-content: space-around*/
+       
+}
+#grey_Circle_edit , #grey_Circle_remove{
+     padding:19px;
+     border-radius: 50%;
+     background-color:lightgrey;
+     padding:9px;
+     margin:10px;
+}
+li.nostyle {
+    list-style-type: none;
+     display:inline;
+}
+/*ol#songList li {
+    display:inline;
+}*/
+li.songItem{
+    opacity: 0.5;
+}
+
+#wrapper {
+  position: relative;
+  overflow: hidden;
+  height: 25px;
+  width: 250px;
+  border: none;
+  
+}
+
+#wrapper h5 {
+  position: absolute;
+  margin: 0;
+  line-height: 25px;
+  white-space: nowrap;
+  animation: marquee 9s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+  
+	
+
+<div id="container">
+    <div id="play">
+        <div id="playListC">
+            <section>
+                <div class="playItemC" >
+                    <span class="playItemSmallC"><i class="fa fa-pause" style="font-size:31px;"></i></span>
+                </div>
+            </section>
+        </div>
+        <aside>
+            <audio id="audioPlay" controls autoplay>
+                <source id="song_source" src="MessageInABottle.mp3" type="audio/mpeg">
+            </audio>
+            <div id="wrapper">
+            <h5 id="info">NOW PLAYING</h5>
+            </div>
+        </aside>
+    </div>
+    <div id='buttonsContainer'>
+        <div id="grey_Circle_edit">
+            <i class="fa fa-pencil" style="font-size:30px;"></i>
+        </div>
+        <div id="grey_Circle_remove">
+            <i class="fa fa-times" style="font-size:25px;"></i>
+        </div>
+    </div>
+</div>
+<div id="songListContainer">
+    <ol start="2" id="songList">
+    </ol>
+</div
+        
+ 
